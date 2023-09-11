@@ -63,9 +63,7 @@ footer{
 }
 
 nav li{
-  display: inline;
   list-style-type: none;
-  margin-right: 20px;
 }
 
 nav{
@@ -75,29 +73,51 @@ nav{
   top: 0;
 }
 
+nav ul{
+  padding-inline: 4em;
+  display: flex;
+  gap: 2rem;
+}
+
 main{
   padding: 20px;
-  overflow: auto;
+  display: flex;
+  gap: 1.5rem;
 }
 
 #content{
-  float: left;
-  width: 75%;
+  flex: 5;
+
+  flex-flow: column nowrap;
+  gap: 1rem 2rem;
 }
-aside2{
-  float: right;
-  width: 25%;
-  padding-left: 20px;
+aside{
+  flex: 1 0;
+  display: flex;
+  flex-flow: column nowrap;
 }
 header{
   display: inline;
 }
-@media screen and (max-width: 1000px) {
-  #content, aside {
-    width: 100%;
-    padding: 0;
+@media screen and (max-width: 1200px) {
+  main {
+    flex-flow: column nowrap;
+  }
+  main aside {
+    align-self: center;
   }
 }
+@media screen and (max-width: 768px) {
+  nav ul {
+    justify-content: center;
+  }
+ 
+  main aside {
+    align-self: stretch;
+  }
+}
+
+
 </style>
 
 
@@ -133,7 +153,7 @@ header{
    </header> 
    <main>
     <div>
-      <aside>
+      <aside1>
    <div id="content">
    <article id="Sejarah" class="card">
     <h2>Sejarah</h2>
@@ -167,8 +187,8 @@ header{
   </section>  
   </article>
     </div>
-  </aside>
-  <aside2>
+  </aside1>
+  <aside>
     <article class="profile" class="profile-card">
       <header>
   <h2>Kota Bandung</h2>
@@ -201,7 +221,7 @@ header{
   
 </section>
     </article>
-  </aside2>
+  </aside>
 </main>
   </body>
   <footer>
